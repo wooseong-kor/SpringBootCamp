@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jun.board">
+
+	<select id="selectAll" resultType="BDto">
+		SELECT BOARD_SEQ, WRITER, BOARD_TITLE, READCOUNT, REGDATE
+		FROM BOARDPRACTICE
+	</select>
+	
+	<select id="selectOne" resultType="BDto" parameterType="java.lang.Integer">
+		SELECT BOARD_SEQ, WRITER, BOARD_TITLE, BOARD_CONTENT, REGDATE
+		FROM BOARDPRACTICE
+		WHERE BOARD_SEQ = #{board_seq}
+	</select>
+	
+	
+</mapper>

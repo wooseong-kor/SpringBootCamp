@@ -1,0 +1,25 @@
+server:
+  port: 8089
+  
+---
+
+spring:  datasource:    driver-class-name: oracle.jdbc.driver.OracleDriver    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: rainbow
+    password: rainbow
+  jpa:    database: oracle
+    generate-ddl: false
+    show-sql: true
+    hibernate:      ddl-auto: none
+    database-platform: org.hibernate.dialect.OracleDialect
+    
+---
+
+logging:  level:
+    org.hibernate: info 
+    
+---
+
+spring:  mvc:    view:      prefix: /WEB-INF/view/
+      suffix: .jsp
+
+    
